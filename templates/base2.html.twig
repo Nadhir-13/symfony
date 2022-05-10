@@ -65,8 +65,10 @@
                             </ul>
                         </div>
                         <div class="user_box ml-auto">
-                            <div class="user_box_login user_box_link"><a >login</a></div>
-                            <div class="user_box_register user_box_link"><a href="#">register</a></div>
+
+                            <div class="user_box_login user_box_link"><a href={{ path('app_login') }} >login</a></div>
+                            <div class="user_box_register user_box_link"><a href={{ path('app_logout') }}>logout</a></div>
+
                         </div>
                     </div>
                 </div>
@@ -85,6 +87,7 @@
                         <div class="main_nav_container ml-auto">
                             <ul class="main_nav_list">
                                 <li class="main_nav_item"><a href="#">home</a></li>
+
                                 <li class="main_nav_item"><a href="about.html">hotels</a></li>
                                 <li class="main_nav_item"><a >vols</a></li>
                                 <li class="main_nav_item"><a href="{{ path('voiture_client') }}">Transport</a></li>
@@ -92,6 +95,16 @@
                                 <li class="main_nav_item"><a href="/fronteven">Evennement</a></li>
 
                                 <li class="main_nav_item"><a href="/" >admin</a></li>
+
+                                <li class="main_nav_item"><a href="/reservation/h">hotels</a></li>
+                                <li class="main_nav_item"><a >vols</a></li>
+                                <li class="main_nav_item"><a href="blog.html">voitures</a></li>
+
+                                <li class="main_nav_item"><a href="/fronteven">Evennement</a></li>
+
+                                <li class="main_nav_item"><a href="/home" >admin</a></li>
+                                <li class="main_nav_item"><a href="/AbsenceList" >Employeé</a></li>
+
 
 
 

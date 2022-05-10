@@ -60,6 +60,28 @@
         </thead>
         <tbody id="all">
 
+        {% for Absence in Absences %}
+        <tr {% if(Absence.id.username=="sahar") %} >
+
+
+            <td>
+
+                {{ Absence.etatAbsence }}
+
+            </td>
+            <td>
+
+                {{ Absence.dateAb |date('d-m-Y H:i') }}
+
+            </td>
+            <td>
+
+                {{ Absence.finAb |date('d-m-Y H:i') }}
+
+            </td>
+        </tr {% endif %}>
+            {% endfor %}
+
         </tbody>
     </table>
             <!--Start of Tawk.to Script-->

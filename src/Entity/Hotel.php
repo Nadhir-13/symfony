@@ -2,57 +2,69 @@
 
 namespace App\Entity;
 
+
+use App\Repository\HotelRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Hotel
- *
- * @ORM\Table(name="hotel")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=HotelRepository::class)
+
  */
 class Hotel
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_hotel", type="integer", nullable=false)
+
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $idHotel;
+    private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="libelle", type="integer", nullable=false)
+     * @ORM\Column(type="string", length=255)
+
      */
     private $libelle;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="locale", type="string", length=255, nullable=false)
+
+     * @ORM\Column(type="string", length=255)
+
      */
     private $locale;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="caracteristique", type="text", length=65535, nullable=false)
+
+     * @ORM\Column(type="string", length=255)
      */
     private $caracteristique;
 
-    public function getIdHotel(): ?int
+    /**
+     * @ORM\OneToMany(targetEntity=Chambre::class, mappedBy="Hotel")
+     */
+    private $chambres;
+
+    public function __construct()
     {
-        return $this->idHotel;
+        $this->chambres = new ArrayCollection();
     }
 
-    public function getLibelle(): ?int
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getLibelle(): ?string
+
     {
         return $this->libelle;
     }
 
-    public function setLibelle(int $libelle): self
+
+    public function setLibelle(string $libelle): self
+
     {
         $this->libelle = $libelle;
 
@@ -81,6 +93,42 @@ class Hotel
         $this->caracteristique = $caracteristique;
 
         return $this;
+    }
+
+
+    /**
+     * @return Collection<int, Chambre>
+     */
+    public function getChambres(): Collection
+    {
+        return $this->chambres;
+    }
+
+    public function addChambre(Chambre $chambre): self
+    {
+        if (!$this->chambres->contains($chambre)) {
+            $this->chambres[] = $chambre;
+            $chambre->setHotel($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChambre(Chambre $chambre): self
+    {
+        if ($this->chambres->removeElement($chambre)) {
+            // set the owning side to null (unless already changed)
+            if ($chambre->getHotel() === $this) {
+                $chambre->setHotel(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getLibelle();
     }
 
 

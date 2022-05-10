@@ -2,101 +2,67 @@
 
 namespace App\Entity;
 
+
+use App\Repository\ReservationHRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ReservationH
- *
- * @ORM\Table(name="reservation_h", indexes={@ORM\Index(name="id_cham", columns={"id_cham"}), @ORM\Index(name="id_client", columns={"id"}), @ORM\Index(name="id_facture_hot", columns={"id_facture_hot"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=ReservationHRepository::class)
  */
 class ReservationH
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id-rh", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $idRh;
+    private $id_rh;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_rh", type="date", nullable=false)
+     * @ORM\Column(type="date")
      */
-    private $dateRh;
+    private $date_rh;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="heure_rh", type="time", nullable=false)
+     * @ORM\Column(type="time")
      */
-    private $heureRh;
+    private $heure_rh;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="duree", type="integer", nullable=false)
+     * @ORM\Column(type="integer")
      */
     private $duree;
 
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id", referencedColumnName="id")
-     * })
-     */
-    private $id;
-
-    /**
-     * @var \FactureHot
-     *
-     * @ORM\ManyToOne(targetEntity="FactureHot")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_facture_hot", referencedColumnName="id_facture_hot")
-     * })
-     */
-    private $idFactureHot;
-
-    /**
-     * @var \Chambre
-     *
-     * @ORM\ManyToOne(targetEntity="Chambre")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_cham", referencedColumnName="id_cham")
-     * })
-     */
-    private $idCham;
-
-    public function getIdRh(): ?int
+    public function getId_rh(): ?int
     {
-        return $this->idRh;
+        return $this->id_rh;
+
     }
 
     public function getDateRh(): ?\DateTimeInterface
     {
-        return $this->dateRh;
+
+        return $this->date_rh;
     }
 
-    public function setDateRh(\DateTimeInterface $dateRh): self
+    public function setDateRh(\DateTimeInterface $date_rh): self
     {
-        $this->dateRh = $dateRh;
+        $this->date_rh = $date_rh;
+
 
         return $this;
     }
 
     public function getHeureRh(): ?\DateTimeInterface
     {
-        return $this->heureRh;
+
+        return $this->heure_rh;
     }
 
-    public function setHeureRh(\DateTimeInterface $heureRh): self
+    public function setHeureRh(\DateTimeInterface $heure_rh): self
     {
-        $this->heureRh = $heureRh;
+        $this->heure_rh = $heure_rh;
+
 
         return $this;
     }
@@ -112,42 +78,4 @@ class ReservationH
 
         return $this;
     }
-
-    public function getId(): ?User
-    {
-        return $this->id;
-    }
-
-    public function setId(?User $id): self
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    public function getIdFactureHot(): ?FactureHot
-    {
-        return $this->idFactureHot;
-    }
-
-    public function setIdFactureHot(?FactureHot $idFactureHot): self
-    {
-        $this->idFactureHot = $idFactureHot;
-
-        return $this;
-    }
-
-    public function getIdCham(): ?Chambre
-    {
-        return $this->idCham;
-    }
-
-    public function setIdCham(?Chambre $idCham): self
-    {
-        $this->idCham = $idCham;
-
-        return $this;
-    }
-
-
 }
