@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 use App\Repository\ReservationHRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -35,10 +36,12 @@ class ReservationH
     public function getId_rh(): ?int
     {
         return $this->id_rh;
+
     }
 
     public function getDateRh(): ?\DateTimeInterface
     {
+
         return $this->date_rh;
     }
 
@@ -46,17 +49,20 @@ class ReservationH
     {
         $this->date_rh = $date_rh;
 
+
         return $this;
     }
 
     public function getHeureRh(): ?\DateTimeInterface
     {
+
         return $this->heure_rh;
     }
 
     public function setHeureRh(\DateTimeInterface $heure_rh): self
     {
         $this->heure_rh = $heure_rh;
+
 
         return $this;
     }

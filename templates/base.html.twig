@@ -64,7 +64,11 @@
 
         <!-- LOGO -->
         <div class="topbar-left">
+
+            <a href="{{ path('absence') }}" class="logo"><span>Admin<span>to</span></span><i class="mdi mdi-layers"></i></a>
+
             <a href="{{ path('app_evenement') }}" class="logo"><span>Admin<span>to</span></span><i class="mdi mdi-layers"></i></a>
+
         </div>
 
         <!-- Button mobile view to collapse sidebar menu -->
@@ -103,6 +107,7 @@
                                 </ul>
                             </div>
                             <!-- End Notification bar -->
+
                         </li>
 
                         <li class="hide-phone">
@@ -129,7 +134,9 @@
             <!-- User -->
             <div class="user-box">
                 <div class="user-img">
+
                     <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive">
+
                     <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
                 </div>
 
@@ -155,21 +162,27 @@
                     <li class="text-muted menu-title">Navigation</li>
 
                     <li class="has_sub">
+
                         <a href="{{ path('EvenementList') }}" class="waves-effect"><i class="mdi mdi-texture"></i><span class="badge badge-warning pull-right">7</span><span> Gestion Evenement </span> </a>
+
                         <ul class="list-unstyledtyled">
 
                         </ul>
                     </li>
 
                     <li class="has_sub">
+
                         <a href="{{ path('AbsenceListe') }}" class="waves-effect"><i class="mdi mdi-view-list"></i> <span>Gestion Absences </span> <span class="menu-arrow"></span></a>
+
                         <ul class="list-unstyled">
 
                         </ul>
                     </li>
 
                     <li class="has_sub">
+
                         <a href="/" class="waves-effect"><i class="mdi mdi-chart-donut-variant"></i><span>Gestion Reservation</span> <span class="menu-arrow"></span></a>
+
                         <ul class="list-unstyled">
 
                         </ul>
@@ -182,6 +195,29 @@
                         <a  class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Gestion Vol </span> </a>
                     </li>
                     <li>
+
+                        <a href="{{ path('transport') }}"  class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Gestion de transport </span> </a>
+                    </li>
+
+                    <li>
+                        <a  class="waves-effect"><i class="mdi mdi-format-font"></i> <span>Gestion Produit</span> </a>
+                    </li>
+
+                    <li class="has_sub">
+                        <a  class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Gestion Commande</span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a  class="waves-effect"><i class="mdi mdi-calendar"></i><span>Gestion Ligne commande</span></a>
+                    </li>
+
+                    <li>
+                        <a href="inbox.html" class="waves-effect"><i class="mdi mdi-email"></i><span class="badge badge-purple pull-right">New</span><span>Gestion Reclamation </span></a>
+
                         <a  class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Gestion Voiture </span> </a>
                     </li>
                     <li>
@@ -199,6 +235,7 @@
 
                     <li>
                         <a href="/AbsenceList" class="waves-effect"><i class="mdi mdi-email"></i><span class="badge badge-purple pull-right">New</span><span>Employeés </span></a>
+
                     </li>
 
                     <li class="has_sub">
@@ -216,7 +253,11 @@
                     </li>
 
                     <li class="has_sub">
+
+                        <a class="waves-effect"><i class="mdi mdi-layers"></i><span>Logout </span> <span class="menu-arrow"></span></a>
+
                         <a href={{ path('app_logout') }} class="waves-effect"><i class="mdi mdi-layers"></i><span>Logout </span> <span class="menu-arrow"></span></a>
+
 
                     </li>
 
@@ -242,6 +283,7 @@
     </footer>
 
 </div>
+
 <div class="content-page">
     <!-- Start content -->
     <div class="content">
@@ -271,6 +313,7 @@
 
 
                         {% block body %}{% endblock %}
+
 
 
 </body>
@@ -308,6 +351,7 @@
         });
     </script>
 {% endblock %}
+
 
 
 

@@ -21,7 +21,9 @@ class AbsenceController extends AbstractController
      */
     public function index(): Response
     {
+
         return $this->render('base2.html.twig', [
+
             'controller_name' => 'AbsenceController',
         ]);
     }

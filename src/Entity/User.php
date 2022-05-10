@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -18,10 +19,12 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+
      */
     private $id;
 
     /**
+
      * @ORM\Column(type="string", length=180, unique=true)
      * @Assert\NotBlank
      * @Assert\Email(
@@ -30,6 +33,7 @@ class User implements UserInterface
     private $email;
 
     /**
+
      * @ORM\Column(type="array")
      */
     private $roles = [];
@@ -37,10 +41,12 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+
      */
     private $password;
 
     /**
+
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      * @Assert\Length(
@@ -68,6 +74,7 @@ class User implements UserInterface
     }
 
     public function getEmail(): ?string
+
     {
         return $this->email;
     }
@@ -110,11 +117,13 @@ class User implements UserInterface
 
     /**
      * @see UserInterface
+
      */
     public function getPassword(): string
     {
         return $this->password;
     }
+
 
     public function setPassword(string $password): self
     {
@@ -173,4 +182,5 @@ class User implements UserInterface
 
         return $this;
     }
+
 }

@@ -1,4 +1,12 @@
 {
+
+    "bacon/bacon-qr-code": {
+        "version": "2.0.7"
+    },
+    "dasprid/enum": {
+        "version": "1.0.3"
+    },
+
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -85,6 +93,17 @@
     "egulias/email-validator": {
         "version": "3.1.2"
     },
+
+    "endroid/installer": {
+        "version": "1.4.0"
+    },
+    "endroid/qr-code": {
+        "version": "4.4.8"
+    },
+    "endroid/qr-code-bundle": {
+        "version": "4.0.7"
+    },
+
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
@@ -97,9 +116,11 @@
     "laminas/laminas-code": {
         "version": "4.5.1"
     },
+
     "mercuryseries/flashy-bundle": {
         "version": "v5.1.0"
     },
+
     "monolog/monolog": {
         "version": "1.26.1"
     },
@@ -355,6 +376,7 @@
             "./src/Kernel.php"
         ]
     },
+
     "symfony/google-mailer": {
         "version": "4.4",
         "recipe": {
@@ -364,6 +386,7 @@
             "ref": "f8fd4ddb9b477510f8f4bce2b9c054ab428c0120"
         }
     },
+
     "symfony/http-client": {
         "version": "v4.4.37"
     },
@@ -620,6 +643,7 @@
     "symfony/yaml": {
         "version": "v4.4.37"
     },
+
     "symfonycasts/reset-password-bundle": {
         "version": "1.13",
         "recipe": {
@@ -635,6 +659,7 @@
     "symfonycasts/verify-email-bundle": {
         "version": "v1.10.0"
     },
+
     "theseer/tokenizer": {
         "version": "1.2.1"
     },
@@ -644,9 +669,11 @@
     "twig/twig": {
         "version": "v3.3.7"
     },
+
     "twilio/sdk": {
         "version": "6.37.0"
     },
+
     "webmozart/assert": {
         "version": "1.10.0"
     }
